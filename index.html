@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Voice Recorder</title>
+  </head>
+  <style>
+    .container {
+      height: 100dvh;
+      width: 100dvw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #d9a7c7, #9775fe);
+      gap: 3rem;
+    }
+    #record,#stop {
+      background-color: #e6e6e6; /* Light gray background */
+      border: none;
+      border-radius: 5px; /* Rounded corners */
+      color: #333; /* Dark gray text */
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }
+
+    #record:hover {
+      background-color: #d6d6d6; /* Slightly darker gray on hover */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    }
+
+    audio {
+  width: 100%;
+  height: 30px; /* Adjust height as needed */
+  background-color: #333; /* Dark gray background */
+  border-radius: 5px;
+  color: #fff; /* White text */
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+audio::-webkit-media-controls {
+  display: none; /* Hide default controls */
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #333; /* Dark gray background */
+  border-radius: 5px;
+  color: #fff; /* White text */
+  padding: 5px 10px;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  margin-right: 10px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  width: 50px; /* Adjust width as needed */
+  height: 10px; /* Adjust height as needed */
+  background-color: #555; /* Darker gray for slider */
+  border-radius: 5px;
+}
+
+audio::-webkit-media-controls-volume-slider-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: #fff; /* White thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+audio::-webkit-media-controls-play-button {
+  margin-right: 10px;
+}
+
+audio::-webkit-media-controls-mute-button {
+  margin-right: 10px;
+}
+
+audio::-webkit-media-controls-timeline {
+  background-color: #555; /* Darker gray for timeline */
+  height: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+audio::-webkit-media-controls-timeline-thumb {
+  background-color: #fff; /* White thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+  </style>
+  <body>
+    <div class="container">
+      <div class="display"></div>
+
+      <div class="controllers"></div>
+    </div>
+  </body>
+  <script src="Recording.js"></script>
+</html>
